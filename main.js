@@ -8,7 +8,7 @@ const cookieParser = require('cookie-parser');
 const expressEjsLayouts = require('express-ejs-layouts');
 const moment = require("jalali-moment")
 const methodOverride = require('method-override');
-dotenv.config()
+dotenv.config({ path: ".env.example" });
 
 
 

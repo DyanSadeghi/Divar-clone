@@ -14,6 +14,10 @@ mainRouter.use("/category",CategoryRouter)
 mainRouter.use("/option", OptionRoutes);
 mainRouter.use("/post", PostRouter);
 mainRouter.get("/",PostController.postList)
+mainRouter.get("/auth/login", (req, res) => {
+     res.locals.layout = "./layouts/auth/main.ejs";
+  res.render("./pages/auth/login.ejs");
+});
 // mainRouter.get("/:id", (req, res) => {
 //   res.locals.layout = "./layouts/website/main.ejs";
 //   res.render("./pages/home/index.ejs");
@@ -23,9 +27,5 @@ mainRouter.get("/",PostController.postList)
 //   res.render("./pages/panel/dashboard.ejs");
 // });
 
-// mainRouter.get("/auth/login", (req, res) => {
-//      res.locals.layout = "./layouts/auth/main.ejs";
-//   res.render("./pages/auth/login.ejs");
-// });
 
 module.exports = mainRouter
